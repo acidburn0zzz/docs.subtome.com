@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubToMe Docs &mdash; Documentation for SubToMe</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/logo.png"/>
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="SubToMe Docs" />
+    <meta name="title" content="SubToMe Docs">
+    <link rel="canonical" href="http://docs.subtome.com/publishers/">
+    
+    
+    <meta property="og:title" content="SubToMe Docs"/>
+    <meta property="og:url" content="http://docs.subtome.com/publishers/"/>
+    
+    
+    <meta property="og:site_name" content="SubToMe Docs">
+</head>
+<body>
+
+<section class="site-nav">
+    <header>
+        <nav id="navigation">
+            <a class="brand" href="/">
+                <img src="/images/logo.png" alt="Inc">
+            </a>
+            <a href="/news/" class="home">News</a>
+            <a href="/publishers">Publishers</a>
+            <a href="/developers">Developers</a>
+            <a href="/security">Security</a>
+        </nav>
+        <nav class="tagline">
+            <span>Universal Follow Button</span>
+            <a href="https://github.com/superfeedr/subtome/issues" class="btn btn-outline">Report Problem, Ask Question</a>
+        </nav>
+    </header>
+</section>
+
+<article class="container">
+  <h1>Publishers</h1>
+  <h2>Get your readers to subscribe to your content</h2>
+  <p>You update your content regularly. You want your users to come back when that happens: allow them to <em>subscribe</em> to your content. It's as easy as adding a button to any page where you want to allow subscriptions. Make sure your page links to a feed corresponding to the data your readers will subscribe to.</p>
+  <p>Copy and paste the code below into any HTML page.</p>
+
+  <script src="https://gist.github.com/julien51/4332573.js"></script>
+
+  <p>What this does is quite simple: when the user clicks the button, it loads a small Javascript snippet located at <code><a href="https://www.subtome.com/load.js">https://www.subtome.com/load.js</a></code>. This snippet will then load the SubToMe modal. Feel free to check the code if you want to learn more.</p>
+
+  <p>By default, this will use the current page's URL, as well as any feed placed in the <code>&lt;head&gt;</code> section.</p>
+
+  <h3>Easy way</h3>
+  <p>If you use Wordpress for your blog, just add this <a href="http://wordpress.org/extend/plugins/subtome">SubToMe widget</a> to your layout, or look for <i>SubToMe</i> in your dashboard's 'Install Plugins' interface.</p>
+
+  <h3>Custom feed per button</h3>
+
+  <p>SubToMe supports <a href="http://www.w3.org/html/wg/drafts/html/master/#custom">HTML5 data attributes</a> so that you can customize the feed associated with any button. You can add the following to any button:</p>
+  <ul>
+    <li><b>data-subtome-resource</b>: the main url for the resource to which the user is subscribing.</li>
+    <li><b>data-subtome-feeds</b>: a comma separated list of encoded feed urls representing the same resource.</li>
+  </ul>
+
+  <p>Of course, this is 100% open, which means that you can change that code in any way you want, or use other mechanisms that fit your needs. Feel free to get in touch if you need help.</p>
+
+  <h3>Suggested service</h3>
+
+  <p>It is also possible for a publisher to recommend a specific application for their visitors. This allows them to promote what they think is the best tool, while still letting the user eventually pick the tool of their choice. </p>
+
+  <ul>
+    <li><b>data-subtome-suggested-service-name</b>: The name of the recommended service.</li>
+    <li><b>data-subtome-suggested-service-url</b>: The handler used by the recommended service. Check the <a href="/#/developers">developer</a> page for more details on how to build this.</li>
+  </ul>
+
+  <h3>Fully customized example</h3>
+
+  <p>This button: <input type="button" onclick="(function(btn){var z=document.createElement('script');document.subtomeBtn=btn;z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})(this)" value="Subscribe" data-subtome-resource="http://blog.superfeedr.com" data-subtome-feeds="http://blog.superfeedr.com/atom.xml" data-subtome-suggested-service-name="FeedBin" data-subtome-suggested-service-url="https://feedbin.me/?subscribe={feed}" > will let you follow <a href="http://blog.superfeedr.com/">Superfeedr's Blog</a> using <a href="https://feedbin.me/">Feedbin</a> as the recommended reader. Feel free to check the HTML source to see exactly how it looks like!</p>
+</p>
+
+</article>
+
+
+<footer class="site-footer">
+    <div class="container">
+        &copy; 2015
+
+        <nav>
+            <a href="http://superfeedr.com/">Superfeedr</a> &middot;
+            <a href="/">Docs</a> &middot;
+            <a href="/about">About</a>
+        </nav>
+
+        <nav class="social">
+            
+            
+            <a href="#" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})()" title="RSS Feed" style="width: 120px; line-height: 12px;">
+
+              Follow
+                <i class="icon icon-rss black"></i>
+            </a>
+
+        </nav>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

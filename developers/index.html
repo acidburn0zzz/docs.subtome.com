@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubToMe Docs &mdash; Documentation for SubToMe</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/logo.png"/>
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="SubToMe Docs" />
+    <meta name="title" content="SubToMe Docs">
+    <link rel="canonical" href="http://docs.subtome.com/developers/">
+    
+    
+    <meta property="og:title" content="SubToMe Docs"/>
+    <meta property="og:url" content="http://docs.subtome.com/developers/"/>
+    
+    
+    <meta property="og:site_name" content="SubToMe Docs">
+</head>
+<body>
+
+<section class="site-nav">
+    <header>
+        <nav id="navigation">
+            <a class="brand" href="/">
+                <img src="/images/logo.png" alt="Inc">
+            </a>
+            <a href="/news/" class="home">News</a>
+            <a href="/publishers">Publishers</a>
+            <a href="/developers">Developers</a>
+            <a href="/security">Security</a>
+        </nav>
+        <nav class="tagline">
+            <span>Universal Follow Button</span>
+            <a href="https://github.com/superfeedr/subtome/issues" class="btn btn-outline">Report Problem, Ask Question</a>
+        </nav>
+    </header>
+</section>
+
+<div class="article-cover">
+    <div>
+        <img src="/images/developers.png" class="image">
+    </div>
+</div>
+
+<article class="container">
+
+<h1>Applications</h1>
+<h2>Allow your users to subscribe to content</h2>
+<p>If your application is able to handle user subscriptions, this section is for you.</p>
+<h3>Registration</h3>
+<p>Your users will click on subscribe buttons on some pages. When they do so, a list of the subscription services <em>they</em> used in the past is displayed. This list was not curated by us, but stored in their browser (using localStorage) from services that registered their ability to perform susbcriptions for that user.</p>
+<p>You too can quickly and easily register your application for your users by loading an iframe like this: <small>Please note that this is completely transparent for the user!</small></p>
+
+  <script src="https://gist.github.com/julien51/4333876.js"></script>
+
+<p>The <code>name</code> query string is the name of your application and the <code>url</code> is the url of the hander which will be called in your application to perform a subscription (thru a user redirect). </p>
+<p>The subscription handler is obviously completely up to you, but it should include at least one of the following:</p>
+<ul>
+  <li><code>{url}</code> will be populated with the <code>location.href</code> of the page on which the user clicked the subscribe button.</li>
+  <li><code>{feeds}</code> will be populated with the <code>href</code> element of each <code><link></code> elements corresponding to a feed in the page on which the user clicked.</li>
+  <li><code>{feed}</code> will be populated with the first (if any) of the <code>{feeds}</code> above.</li>
+</ul>
+
+<p> It is also possible to register the user by opening a url in the browser directly. This is particularly useful for standalone (desktop based) feed readers. Use the url <code>https://www.subtome.com/#/register?</code>, with the same params used by the iframe based registration.</p>
+
+<h3>Subscription handling</h3>
+
+<p>When a user clicks on a SubToMe button, he can pick his favorite subscription application. If it's yours, then, a new browser tab will be created and will point to your application's handler <code>url, feed or feeds</code> (see previous section). Based on the <code>handler</code> you've provided, you will be able to extract the location of the page on which the button was clicked and its feeds.</p>
+<p>Your application should then, perform the subscription, by extracting the content it needs. We recommend using the RSS/Atom feeds, but you could also very well extract the links to a Twitter profile for example allow the user to follow that profile. Possibilities are endless.</p>
+</article>
+
+
+<footer class="site-footer">
+    <div class="container">
+        &copy; 2015
+
+        <nav>
+            <a href="http://superfeedr.com/">Superfeedr</a> &middot;
+            <a href="/">Docs</a> &middot;
+            <a href="/about">About</a>
+        </nav>
+
+        <nav class="social">
+            
+            
+            <a href="#" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})()" title="RSS Feed" style="width: 120px; line-height: 12px;">
+
+              Follow
+                <i class="icon icon-rss black"></i>
+            </a>
+
+        </nav>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

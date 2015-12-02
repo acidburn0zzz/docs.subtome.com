@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting Subscribers &mdash; SubToMe Docs</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/logo.png"/>
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="SubToMe Docs" />
+    <meta name="title" content="Counting Subscribers ">
+    <link rel="canonical" href="http://docs.subtome.com/2013/11/25/counting-subscribers/">
+    
+    
+    <meta property="og:title" content="Counting Subscribers "/>
+    <meta property="og:url" content="http://docs.subtome.com/2013/11/25/counting-subscribers/"/>
+    
+    
+    <meta property="og:description" content="Right or wrong, the amount of “followers” is often used as a proxy for popularity and importance. We believe this is the reasons why Feedburner quickly got so popular: it gave publishers and bloggers an interesting metric that they could compare. Years later, the number of followers on Twitter is also prominent on their follow buttons.
+
+Now, since SubToMe is fully decentralized (publishing applications and subscribing applications are unaware of each other), it’s really hard to provide accurate analytics (not that Feedburner’s stats were accurate either… but that’s another story). However, there is one thing that SubToMe can tell the publisher: that a susbcription happened.
+
+Basically, everytime someone clicks on the SubToMe button you’ve put on your site, SubToMe will trigger a Javascript event that you should listen to. The event incldues the following information:
+
+
+  feeds: the list of feeds to which the user may have subscribed
+  resource: the HTTP resource related to the subscription
+  The app used to subscribe: its name and its url.
+
+
+Here is some sample code:
+
+  window.addEventListener("message", function(event) {
+    if (event.origin !== "https://www.subtome.com")
+    return;
+    // do something with event.data.subscription
+  });
+
+
+By default, the load.js file, which is the default way to load the SubToMe button, will also trigger a Google Analytics (if your site uses it) event to tell you that somebody subscribed to your feed! 
+
+"/>
+    <meta name="description" content="Right or wrong, the amount of “followers” is often used as a proxy for popularity and importance. We believe this is the reasons why Feedburner quickly got so popular: it gave publishers and bloggers an interesting metric that they could compare. Years later, the number of followers on Twitter is also prominent on their follow buttons.
+
+Now, since SubToMe is fully decentralized (publishing applications and subscribing applications are unaware of each other), it’s really hard to provide accurate analytics (not that Feedburner’s stats were accurate either… but that’s another story). However, there is one thing that SubToMe can tell the publisher: that a susbcription happened.
+
+Basically, everytime someone clicks on the SubToMe button you’ve put on your site, SubToMe will trigger a Javascript event that you should listen to. The event incldues the following information:
+
+
+  feeds: the list of feeds to which the user may have subscribed
+  resource: the HTTP resource related to the subscription
+  The app used to subscribe: its name and its url.
+
+
+Here is some sample code:
+
+  window.addEventListener("message", function(event) {
+    if (event.origin !== "https://www.subtome.com")
+    return;
+    // do something with event.data.subscription
+  });
+
+
+By default, the load.js file, which is the default way to load the SubToMe button, will also trigger a Google Analytics (if your site uses it) event to tell you that somebody subscribed to your feed! 
+
+"/>
+    
+    <meta property="og:site_name" content="SubToMe Docs">
+</head>
+<body>
+
+<section class="site-nav">
+    <header>
+        <nav id="navigation">
+            <a class="brand" href="/">
+                <img src="/images/logo.png" alt="Inc">
+            </a>
+            <a href="/news/" class="home">News</a>
+            <a href="/publishers">Publishers</a>
+            <a href="/developers">Developers</a>
+            <a href="/security">Security</a>
+        </nav>
+        <nav class="tagline">
+            <span>Universal Follow Button</span>
+            <a href="https://github.com/superfeedr/subtome/issues" class="btn btn-outline">Report Problem, Ask Question</a>
+        </nav>
+    </header>
+</section>
+
+
+<article>
+
+    <div class="container">
+        <header>
+            <div class="meta">
+                By <address><a rel="author" href="http://ouvre-boite.com/" title="Julien Genestoux" target="_blank">Julien Genestoux</a> &mdash;
+                <time pubdate datetime="2013-25-November" title="November 25, 2013">November 25, 2013</time>
+            </div>
+            <h1 class="title">Counting Subscribers</h1>
+            <h2 class="subtitle">Feedburner became popular by tracking the number of subscribers. Even if decentralization makes that hard, it's still possible to get some data. Here's how to achieve that with SubToMe.</h2>
+        </header>
+
+        <section>
+            <p>Right or wrong, the <strong>amount of “followers”</strong> is often used as a proxy for <em>popularity</em> and <em>importance</em>. We believe this is the reasons why <a href="http://www.feedburner.com/‎">Feedburner</a> quickly got so popular: it gave publishers and bloggers an interesting metric that they could compare. Years later, the number of followers on Twitter is also prominent on <a href="https://dev.twitter.com/docs/follow-button">their follow buttons</a>.</p>
+
+<p>Now, since SubToMe is fully <strong>decentralized</strong> (publishing applications and subscribing applications are unaware of each other), it’s really hard to provide accurate analytics (not that Feedburner’s stats were accurate either… but that’s another story). However, there is one thing that SubToMe can tell the publisher: that a <em>susbcription happened</em>.</p>
+
+<p>Basically, everytime someone clicks on the SubToMe button you’ve put on your site, SubToMe will <em>trigger a Javascript event</em> that you should listen to. The event incldues the following information:</p>
+
+<ul>
+  <li><strong>feeds</strong>: the list of feeds to which the user may have subscribed</li>
+  <li><strong>resource</strong>: the HTTP resource related to the subscription</li>
+  <li><strong>The app</strong> used to subscribe: its name and its url.</li>
+</ul>
+
+<p>Here is some sample code:
+<code>
+  window.addEventListener("message", function(event) {
+    if (event.origin !== "https://www.subtome.com")
+    return;
+    // do something with event.data.subscription
+  });
+</code></p>
+
+<p>By default, the <a href="https://www.subtome.com/load.js">load.js</a> file, which is the default way to load the SubToMe button, will also trigger a <a href="http://www.google.com/analytics/">Google Analytics</a> (if your site uses it) event to tell you that somebody subscribed to your feed! </p>
+
+
+            
+        </section>
+
+        <footer>
+          <p>Want to learn more about SubToMe in the future? <a class='btn btn-outline' style="width: 120px; line-height: 12px;" title="RSS Feed" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})()" href="#"> Follow </a> using your favorite feed reader.</p>
+            <address>
+               <img src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=256">
+                Written by <strong><a rel="author" href="http://ouvre-boite.com/" title="" target="_blank">Julien Genestoux</a></strong><br >
+                <span class="muted">Co-founder, Superfeedr.</span>
+            </address>
+
+        </footer>
+
+        
+        <section>
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'true'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+        </section>
+        
+    </div>
+</article>
+
+
+<footer class="site-footer">
+    <div class="container">
+        &copy; 2015
+
+        <nav>
+            <a href="http://superfeedr.com/">Superfeedr</a> &middot;
+            <a href="/">Docs</a> &middot;
+            <a href="/about">About</a>
+        </nav>
+
+        <nav class="social">
+            
+            
+            <a href="#" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})()" title="RSS Feed" style="width: 120px; line-height: 12px;">
+
+              Follow
+                <i class="icon icon-rss black"></i>
+            </a>
+
+        </nav>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

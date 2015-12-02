@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubToMe Docs &mdash; Documentation for SubToMe</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/logo.png"/>
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="SubToMe Docs" />
+    <meta name="title" content="SubToMe Docs">
+    <link rel="canonical" href="http://docs.subtome.com/security/">
+    
+    
+    <meta property="og:title" content="SubToMe Docs"/>
+    <meta property="og:url" content="http://docs.subtome.com/security/"/>
+    
+    
+    <meta property="og:site_name" content="SubToMe Docs">
+</head>
+<body>
+
+<section class="site-nav">
+    <header>
+        <nav id="navigation">
+            <a class="brand" href="/">
+                <img src="/images/logo.png" alt="Inc">
+            </a>
+            <a href="/news/" class="home">News</a>
+            <a href="/publishers">Publishers</a>
+            <a href="/developers">Developers</a>
+            <a href="/security">Security</a>
+        </nav>
+        <nav class="tagline">
+            <span>Universal Follow Button</span>
+            <a href="https://github.com/superfeedr/subtome/issues" class="btn btn-outline">Report Problem, Ask Question</a>
+        </nav>
+    </header>
+</section>
+
+<article class="container">
+  <h1>Security</h1>
+  <p>
+    We believe your <strong>data is safer if it stays with you, on your computer</strong>. This is the reason why SubToMe is just a button, with no server behind it. Its Javascript and HTML code is stored in your browser after the first load, and all your settings are stored locally as well using HTML5's localStorage.
+  </p>
+  <p>
+    The fact that we have no server is also the reason why there is no need to signup or provide <em>any</em> personal information like your email address when using SubToMe.
+  </p>
+  <h2>Adding the Button to your site</h2>
+  <p>
+    If you have a button on your site, no code is ever executed until someone clicks on it. The code executed then loads and iframe. We consider it to be very safe, but please, <a href="https://github.com/superfeedr/subtome/blob/master/app/load.js">check by yourself</a>: our whole code is open source for anyone to review and improve.
+  </p>
+  <h2>Registering on behalf of your users</h2>
+  <p>
+    If your application is able to consume feeds, you may want to register it on behalf of your users. This is a completely safe mechanism, but it also means anyone could register with any information. This may lead to conflicting registrations for a given name. Our policy is to only keep the latest registration for any given service name. This will favor the most popular service for a given user. It is recommanded that you use unique identifiable names in your registration, such as your domain name.
+  </p>
+</article>
+
+
+<footer class="site-footer">
+    <div class="container">
+        &copy; 2015
+
+        <nav>
+            <a href="http://superfeedr.com/">Superfeedr</a> &middot;
+            <a href="/">Docs</a> &middot;
+            <a href="/about">About</a>
+        </nav>
+
+        <nav class="social">
+            
+            
+            <a href="#" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})()" title="RSS Feed" style="width: 120px; line-height: 12px;">
+
+              Follow
+                <i class="icon icon-rss black"></i>
+            </a>
+
+        </nav>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

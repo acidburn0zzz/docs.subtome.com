@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Attributes &mdash; SubToMe Docs</title>
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/logo.png"/>
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="SubToMe Docs" />
+    <meta name="title" content="Data Attributes ">
+    <link rel="canonical" href="http://docs.subtome.com/2013/12/09/data-attributes/">
+    
+    
+    <meta property="og:title" content="Data Attributes "/>
+    <meta property="og:url" content="http://docs.subtome.com/2013/12/09/data-attributes/"/>
+    
+    
+    <meta property="og:description" content="Last week, I met Chris and we had a great discussion on how to improve SubToMe by supporting data-* attributes on the buttons. This is an HTML5 spec which enables developers to embed data along with its related DOM element. This is exactly how SubtoMe should be designed as per Chris comments.
+
+Using different feeds for multiple buttons has been a pretty common feature request. No later than last week, LLoyd asked for it. Even though it is possible without the data attributes, it involves a lot more Javascript and is significantly less elegant.
+
+Now, each SubToMe button can be configured to specify what are the resources being susbcribed to, as well as the feeds. The button can also be used to include a recommended tool for the subscription.
+
+Check the publisher documentation if you want to see how this can be setup for your buttons very easily!
+
+"/>
+    <meta name="description" content="Last week, I met Chris and we had a great discussion on how to improve SubToMe by supporting data-* attributes on the buttons. This is an HTML5 spec which enables developers to embed data along with its related DOM element. This is exactly how SubtoMe should be designed as per Chris comments.
+
+Using different feeds for multiple buttons has been a pretty common feature request. No later than last week, LLoyd asked for it. Even though it is possible without the data attributes, it involves a lot more Javascript and is significantly less elegant.
+
+Now, each SubToMe button can be configured to specify what are the resources being susbcribed to, as well as the feeds. The button can also be used to include a recommended tool for the subscription.
+
+Check the publisher documentation if you want to see how this can be setup for your buttons very easily!
+
+"/>
+    
+    <meta property="og:site_name" content="SubToMe Docs">
+</head>
+<body>
+
+<section class="site-nav">
+    <header>
+        <nav id="navigation">
+            <a class="brand" href="/">
+                <img src="/images/logo.png" alt="Inc">
+            </a>
+            <a href="/news/" class="home">News</a>
+            <a href="/publishers">Publishers</a>
+            <a href="/developers">Developers</a>
+            <a href="/security">Security</a>
+        </nav>
+        <nav class="tagline">
+            <span>Universal Follow Button</span>
+            <a href="https://github.com/superfeedr/subtome/issues" class="btn btn-outline">Report Problem, Ask Question</a>
+        </nav>
+    </header>
+</section>
+
+
+<article>
+
+    <div class="container">
+        <header>
+            <div class="meta">
+                By <address><a rel="author" href="http://ouvre-boite.com/" title="Julien Genestoux" target="_blank">Julien Genestoux</a> &mdash;
+                <time pubdate datetime="2013-09-December" title="December 09, 2013">December 09, 2013</time>
+            </div>
+            <h1 class="title">Data Attributes</h1>
+            <h2 class="subtitle">How to customize the SubToMe button to fit your needs!</h2>
+        </header>
+
+        <section>
+            <p>Last week, I met <a href="http://www.chrisvanpatten.com/">Chris</a> and we had a great discussion on how to improve SubToMe by supporting <code>data-*</code> attributes on the buttons. This is an <a href="http://www.w3.org/html/wg/drafts/html/master/#custom">HTML5 spec</a> which enables developers to embed data along with its related DOM element. This is exactly how SubtoMe should be designed as per <a href="https://github.com/superfeedr/subtome/issues/60">Chris comments</a>.</p>
+
+<p>Using different feeds for <strong>multiple buttons</strong> has been a pretty common feature request. No later than last week, <a href="http://www.evilprofessor.co.uk/">LLoyd</a> asked for it. Even though it is possible without the data attributes, it involves a lot more Javascript and is significantly less elegant.</p>
+
+<p>Now, each SubToMe button can be configured to specify what are the resources being susbcribed to, as well as the feeds. The button can also be used to include a <em>recommended tool</em> for the subscription.</p>
+
+<p>Check the <a href="http://docs.subtome.com/publishers/">publisher documentation</a> if you want to see how this can be setup for your buttons very easily!</p>
+
+
+            
+        </section>
+
+        <footer>
+          <p>Want to learn more about SubToMe in the future? <a class='btn btn-outline' style="width: 120px; line-height: 12px;" title="RSS Feed" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})()" href="#"> Follow </a> using your favorite feed reader.</p>
+            <address>
+               <img src="http://www.gravatar.com/avatar/b30ce50678f0e934eaa6697425c59dd7?s=256">
+                Written by <strong><a rel="author" href="http://ouvre-boite.com/" title="" target="_blank">Julien Genestoux</a></strong><br >
+                <span class="muted">Co-founder, Superfeedr.</span>
+            </address>
+
+        </footer>
+
+        
+        <section>
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'true'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+        </section>
+        
+    </div>
+</article>
+
+
+<footer class="site-footer">
+    <div class="container">
+        &copy; 2015
+
+        <nav>
+            <a href="http://superfeedr.com/">Superfeedr</a> &middot;
+            <a href="/">Docs</a> &middot;
+            <a href="/about">About</a>
+        </nav>
+
+        <nav class="social">
+            
+            
+            <a href="#" onclick="(function(){var z=document.createElement('script');z.src='https://www.subtome.com/load.js';document.body.appendChild(z);})()" title="RSS Feed" style="width: 120px; line-height: 12px;">
+
+              Follow
+                <i class="icon icon-rss black"></i>
+            </a>
+
+        </nav>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>
